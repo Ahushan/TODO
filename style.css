@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background: #F08080;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.todo-app {
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  padding: 10px;
+}
+
+.container {
+  padding: 1rem;
+  margin: 1rem;
+  background-color: #fff;
+  border-radius: 6px;
+}
+
+.headers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.list-container,
+.goals-container {
+  background: linear-gradient(to right, #ffe4e1, #ffb6c1);
+  color: #191941;
+  padding: 1rem;
+  overflow: hidden;
+  max-height: 500px;
+}
+
+.list-scroll {
+  margin-top: 1rem;
+  overflow-y: auto;
+  max-height: 400px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 5rem;
+}
+
+.list-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.todo-list,
+.goals-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.todo-list li,
+.goal-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #2c2b2b;
+  padding: 0.5rem 0;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.main-val {
+  flex: 1 1 100%;
+  width: 300px;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.delete {
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: red;
+}
+
+.list-input,
+.goal-input {
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 300px;
+  height: 40px;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.list-add-btn {
+  background-color: green;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.lists-data {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.btn {
+  margin-right: 10px;
+}
+
+.status {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 300;
+}
+
+.completed {
+  color: rgb(42, 191, 42);
+}
+
+.pending {
+  color: tomato;
+}
+
+.tick {
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(42, 191, 42);
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  .headers {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .lists-data {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .list-input,
+  .goal-input,
+  .list-add-btn {
+    width: 100%;
+  }
+
+  .main-val {
+    flex: 1 1 auto;
+  }
+}
+
+@media (min-width: 769px) {
+  .headers {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .lists-data {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .list-input,
+  .goal-input,
+  .list-add-btn {
+    width: auto;
+  }
+
+  .main-val {
+    flex: 1;
+  }
+}
+
