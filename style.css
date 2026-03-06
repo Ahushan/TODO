@@ -6,15 +6,29 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
-  background: #F08080;
+  background-image: url("https://images.unsplash.com/photo-1519681393784-d120267933ba");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  /* DARK OVERLAY */
+  background-color: rgba(0, 0, 0, 0.75);
+  background-blend-mode: darken;
+
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   overflow-x: hidden;
 }
+
+/* MAIN APP */
 
 .todo-app {
   width: 100%;
@@ -23,12 +37,19 @@ html, body {
   padding: 10px;
 }
 
+/* GLASS CONTAINER */
+
 .container {
   padding: 1rem;
   margin: 1rem;
-  background-color: #fff;
-  border-radius: 6px;
+  background: rgba(25, 25, 25, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
 }
+
+/* HEADER */
 
 .headers {
   display: flex;
@@ -38,18 +59,24 @@ html, body {
 
 h1 {
   font-family: "Dancing Script", cursive;
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 0.5rem;
+  color: #ffffff;
 }
+
+/* LIST CONTAINERS */
 
 .list-container,
 .goals-container {
-  background: linear-gradient(to right, #ffe4e1, #ffb6c1);
-  color: #191941;
+  background: rgba(40, 40, 40, 0.9);
+  color: white;
   padding: 1rem;
   overflow: hidden;
   max-height: 500px;
+  border-radius: 10px;
 }
+
+/* SCROLL AREA */
 
 .list-scroll {
   margin-top: 1rem;
@@ -64,6 +91,8 @@ h1 {
   display: none;
 }
 
+/* LISTS */
+
 .todo-list,
 .goals-list {
   list-style-type: none;
@@ -75,11 +104,13 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #2c2b2b;
-  padding: 0.5rem 0;
+  border-bottom: 1px solid #444;
+  padding: 0.6rem 0;
   gap: 0.5rem;
   flex-wrap: wrap;
 }
+
+/* TEXT */
 
 .main-val {
   flex: 1 1 100%;
@@ -88,35 +119,74 @@ h1 {
   white-space: normal;
 }
 
+/* BUTTONS */
+
 .delete {
   color: #fff;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.9rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  background-color: red;
+  background-color: #ff4d4d;
+  transition: 0.2s;
 }
+
+.delete:hover {
+  background-color: #ff1a1a;
+}
+
+.tick {
+  color: #fff;
+  padding: 0.4rem 0.9rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #2bbf6a;
+  transition: 0.2s;
+}
+
+.tick:hover {
+  background-color: #1ea755;
+}
+
+/* INPUTS */
 
 .list-input,
 .goal-input {
   outline: none;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   width: 100%;
   max-width: 300px;
   height: 40px;
   padding: 0.5rem;
   font-size: 1rem;
+  background: #2a2a2a;
+  color: white;
 }
 
-.list-add-btn {
-  background-color: green;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.list-input::placeholder,
+.goal-input::placeholder {
+  color: #aaa;
 }
+
+/* ADD BUTTON */
+
+.list-add-btn {
+  background: linear-gradient(135deg, #00c853, #009624);
+  color: white;
+  padding: 0.5rem 1.1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.list-add-btn:hover {
+  transform: scale(1.05);
+}
+
+/* LIST DATA */
 
 .lists-data {
   display: flex;
@@ -129,33 +199,27 @@ h1 {
   margin-right: 10px;
 }
 
+/* STATUS */
+
 .status {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: 300;
 }
 
 .completed {
-  color: rgb(42, 191, 42);
+  color: #2bbf6a;
 }
 
 .pending {
-  color: tomato;
-}
-
-.tick {
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: rgb(42, 191, 42);
+  color: #ff6b6b;
 }
 
 .strike {
   text-decoration: line-through;
 }
 
-/* MEDIA QUERIES */
+/* MOBILE */
+
 @media (max-width: 768px) {
   .headers {
     flex-direction: column;
@@ -177,6 +241,8 @@ h1 {
     flex: 1 1 auto;
   }
 }
+
+/* DESKTOP */
 
 @media (min-width: 769px) {
   .headers {
